@@ -1,3 +1,4 @@
+from email import message
 from re import search
 from tkinter import Image
 from turtle import title
@@ -24,3 +25,11 @@ def get_category(request):
     else:
         message = "You need search a category kindly search"
         return render(request, 'all-gall/search.html',{'message':message})
+
+def get_location(request, search_location):
+    title = 'Location'
+    locations = Location.objects.all()
+    images = Photo.filter_by_location(search_location)
+    message = f"{search_location}"
+    return render( request, 'all-gall/location.html',{'images':images, 'locations':locations,'title':title, 'message':message})
+    
