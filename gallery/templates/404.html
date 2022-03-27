@@ -1,0 +1,12 @@
+{%extends 'all-gall/base.html'%}
+
+{% block content %}
+{{block.super}}
+<div class="row">
+    <div class="col-md-4">
+        <img src="{%static 'photos/404.jpg'%}" alt="">
+    </div>
+    <div class="col-md-6 pt-4">
+        <h3>Image not found.</h3>
+    </div>
+{% endblock %}
