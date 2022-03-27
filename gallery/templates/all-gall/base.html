@@ -9,8 +9,26 @@
 <title> MyGallery </title>
 {% endif %}
 
+{% block styles %}
+
+<link 
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+crossorigin="anonymous"
+referrerpolicy="no-referrer"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap"
+rel="stylesheet"
+/>
+{% bootstrap_css %}
+{% endblock %}
+
 </head>
 <body>
+{% include 'navbar.html' %}
 {% block content %} 
 
 {%endblock%}
