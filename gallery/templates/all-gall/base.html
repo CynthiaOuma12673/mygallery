@@ -1,3 +1,4 @@
+{% load bootstrap3 %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,8 @@
 {% endif %}
 
 {% block styles %}
+    {% bootstrap_css %}
+
 
 <link 
 rel="stylesheet"
@@ -23,14 +26,14 @@ referrerpolicy="no-referrer"
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap"
 rel="stylesheet"
 />
-{% bootstrap_css %}
 {% endblock %}
 
 </head>
 <body>
 {% include 'navbar.html' %}
+
 {% block content %} 
 
-{%endblock%}
+{% endblock %}
 </body>
 </html>
