@@ -32,4 +32,10 @@ def get_location(request, search_location):
     images = Photo.filter_by_location(search_location)
     message = f"{search_location}"
     return render( request, 'all-gall/location.html',{'images':images, 'locations':locations,'title':title, 'message':message})
-    
+
+def get_image(request, image_id):
+    try:
+        image = Photo.objects.get(id = image_id)
+    except:
+        raise Http404()
+    return render(request, 'all-gall/image.html', {'photo':image})
