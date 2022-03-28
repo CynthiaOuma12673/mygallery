@@ -40,7 +40,7 @@ class Category(models.Model):
         return self.name
 
 class Photo(models.Model):
-    image = models.ImageField(upload_to= 'images/')
+    image = models.ImageField(upload_to = 'images/')
     description = models.TextField()
     name = models.CharField(max_length=100)
     upload_date = models.DateTimeField(auto_now_add = True)

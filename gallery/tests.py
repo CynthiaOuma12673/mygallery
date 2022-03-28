@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .models import Photo,Location,Category
+
 class CategoryTestClass(TestCase):
 
     def setUp(self):
