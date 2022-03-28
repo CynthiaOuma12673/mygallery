@@ -1,4 +1,4 @@
-import os
+
 """
 Django settings for photo project.
 
@@ -10,7 +10,10 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -136,4 +139,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-
+cloudinary.config( 
+    cloud_name = "cynthia123456", 
+    api_key = "349849632571232", 
+    api_secret = "CXsauSNf_MIPEHMQn4lsNrJv-Sc" 
+)

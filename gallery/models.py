@@ -1,5 +1,5 @@
-from distutils.command.upload import upload
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Location(models.Model):
@@ -40,12 +40,15 @@ class Category(models.Model):
         return self.name
 
 class Photo(models.Model):
-    image = models.ImageField(upload_to = 'images/')
+    image = CloudinaryField('image')
     description = models.TextField()
     name = models.CharField(max_length=100)
     upload_date = models.DateTimeField(auto_now_add = True)
     category = models.ForeignKey(Category, on_delete = models.CASCADE)
     location = models.ForeignKey(Location, on_delete = models.CASCADE)
+
+    def __str__(self):
+        return self.name
     
     def save_image(self):
         self.save()

@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import render,redirect
 from django.http import Http404
 from .models import Photo, Location, Category
@@ -34,3 +35,16 @@ def get_image(request,id):
     except:
         raise Http404()
     return render(request, 'all-gall/image.html',{'image':image})
+
+def search(request):
+    if 'category' in request.GET and request.GET['category']:
+        search_term = request.GET.get('category')
+        search_category = Category.search_image(search_term)
+        message = f"{search_category}"
+
+        return render(request, 'all-gall/search.html', {'message':message,'images':search_category})
+    else:
+        message = "You need search a category kindly search"
+        return render(request, 'all-gall/search.html',{'message':message})
+
+

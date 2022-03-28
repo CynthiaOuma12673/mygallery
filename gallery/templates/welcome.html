@@ -3,9 +3,21 @@
 {% load bootstrap3 %}
 {% block content %}
 {{block.super}}
+<style>
+    .welcome{
+        background-color: aliceblue;
+        height: 30vh;
+    }
+    .form-control{
+        width: 40rem;
+        margin-left: 55rem;
+    }
+    
+</style>
+<div class="container-fluid">
 <div class="welcome">
     <div class="holder">
-        <h1 id="category" class="text-center">Welcome To My Gallery</h1>
+        <h1 id="category" class="text-center" style="margin-bottom: 2rem;">Welcome To My Gallery</h1>
         <form role="form" class="pt-3 text-center" action="/search">
             <div class="form-group">
                 <input type="text" class="form-control mt-5 " placeholder="&#xF002; Search image in category"
@@ -23,8 +35,8 @@
     <div class="row" id="gallery">
         {%for image in images%}
         <div class="col-sm-8 col-lg-3 mb-3 imgdisplay"  data-toggle="modal" data-target="#{{image.id}}">
-            <img src="{{image.image.url}}" alt=" " class="card-img image" height="200">
-            <small id="image">{{image.name}}</small>
+            <img src="{{image.image.url}}" alt=" " class="card-img image" height="200" width="250" style="padding: 1rem;">
+            <small  id="image">{{image.name}}</small>
         </div>
         <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -66,5 +78,6 @@
         
     
     {% endif %}
+</div>
 </div>
 {% endblock %}
