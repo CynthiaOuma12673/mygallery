@@ -38,4 +38,4 @@ def get_image(request, image_id):
         image = Photo.objects.get(id = image_id)
     except:
         raise Http404()
-    return render(request, 'all-gall/image.html', {'photo':image})
+    return render(request, 'all-gall/image.html',{'image':image})

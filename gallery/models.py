@@ -18,7 +18,7 @@ class Location(models.Model):
 
     @classmethod
     def update_location(cls, id, name):
-        cls.objects.filter(id = id).update(ame = name)
+        cls.objects.filter(id = id).update(name = name)
 
     def __str__(self):
         return self.name
@@ -55,8 +55,8 @@ class Photo(models.Model):
 
     @classmethod
     def get_image_by_id(cls, id):
-        image = cls.objects.filter(id = id).first()
-        return image
+        images = cls.objects.filter(id = id).first()
+        return images
 
     @classmethod
     def search_image(cls, search_category):
