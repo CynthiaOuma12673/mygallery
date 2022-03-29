@@ -6,6 +6,8 @@ Cynthia Ouma
 ## Description
 This is an application that shows my gallery. Users can view the images have posted in my gallery and even save them by downloading them. They can see the different categories of images and see their location.
 
+
+
 ## User Stories
 As a user of the application I should be able to:
 
